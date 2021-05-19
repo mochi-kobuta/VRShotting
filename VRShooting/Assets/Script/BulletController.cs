@@ -9,7 +9,7 @@ public class BulletController : MonoBehaviour
 
     [SerializeField] ParticleSystem hitParticlePrefab;
 
-    void Start()
+    private void Start()
     {
         // ゲームオブジェクト前方向の速度ベクトルを計算
         var velocity = speed * transform.forward;
