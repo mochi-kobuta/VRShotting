@@ -13,6 +13,10 @@ public class EnemyController : MonoBehaviour
 
     AudioSource audioSource; //再生に使用するAudioSource
 
+    [SerializeField] int point = 1; // 倒したときの加算スコアポイント
+
+    ScoreController score;          // スコア
+
     private void Start()
     {
         // AudioSourceコンポーネントを取得しておく
@@ -21,6 +25,12 @@ public class EnemyController : MonoBehaviour
         // 出現時の音を再生
         // PlayOneShotを使うことで、AudioClipを指定して再生できる
         audioSource.PlayOneShot(spawnClip);
+
+        // タグをつけたゲームオブジェクトの検索
+        var gameObj = GameObject.FindWithTag("Score");
+        // gameObjに含まれるScoreコンポーネントを取得
+        score = gameObj.GetComponent<ScoreController>();
+
     }
 
     // OnHitBulletメッセージから呼び出されることを想定
@@ -36,6 +46,9 @@ public class EnemyController : MonoBehaviour
 
     void GoDown()
     {
+        // 敵を倒した際にスコア更新メソッド呼び出す
+        score.AddScore(point);
+
         // 当たり判定と表示を消す（居なくなったように見せる）
         enemyCollider.enabled = false;
         gameObject.SetActive(false);
