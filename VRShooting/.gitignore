@@ -1,0 +1,8 @@
+# Unity generated
+Library/
+Temp/
+
+
+# OS generated
+.DS_Store
+.DS_Store?
