@@ -11,20 +11,22 @@ public class ShooterController : MonoBehaviour
 
     [SerializeField] AudioSource gunAudioSource; // 発射音の音源
 
+    [SerializeField] float bulletInterval = 0.05f; // 弾を発射する間隔
+
     private void Start()
     {
         this.bGanarator = bulletGanarator.GetComponent<BulletGanarator>();
     }
 
-    void Update()
-    {
-        // 入力に応じて弾を発生する
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Shoot();
-        }
+    //void Update()
+    //{
+    //    // 入力に応じて弾を発生する
+    //    if(Input.GetKeyDown(KeyCode.Space))
+    //    {
+    //        Shoot();
+    //    }
         
-    }
+    //}
 
     void Shoot()
     {
@@ -36,5 +38,19 @@ public class ShooterController : MonoBehaviour
 
         // 発射時の音を再生
         gunAudioSource.Play();
+    }
+
+    void OnEnable()
+    {
+        // 2秒後に弾を連続で発射する
+        Debug.Log("OnEnable");
+        InvokeRepeating("Shoot", 2.0f, bulletInterval);
+    }
+
+    void OnDisable()
+    {
+        // Shoot処理を停止する
+        Debug.Log("OnDisable");
+        CancelInvoke("Shoot");
     }
 }
