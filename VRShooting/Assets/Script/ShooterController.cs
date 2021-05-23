@@ -18,15 +18,22 @@ public class ShooterController : MonoBehaviour
         this.bGanarator = bulletGanarator.GetComponent<BulletGanarator>();
     }
 
-    //void Update()
-    //{
-    //    // 入力に応じて弾を発生する
-    //    if(Input.GetKeyDown(KeyCode.Space))
-    //    {
-    //        Shoot();
-    //    }
-        
-    //}
+    void Update()
+    {
+        // 入力に応じて弾を発生する
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();
+        }
+
+        // スマホ対応
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("スマホ　弾丸");
+            Shoot();
+        }
+
+    }
 
     void Shoot()
     {
@@ -40,17 +47,17 @@ public class ShooterController : MonoBehaviour
         gunAudioSource.Play();
     }
 
-    void OnEnable()
-    {
-        // 2秒後に弾を連続で発射する
-        Debug.Log("OnEnable");
-        InvokeRepeating("Shoot", 2.0f, bulletInterval);
-    }
+    //void OnEnable()
+    //{
+    //    // 2秒後に弾を連続で発射する
+    //    Debug.Log("OnEnable");
+    //    InvokeRepeating("Shoot", 2.0f, bulletInterval);
+    //}
 
-    void OnDisable()
-    {
-        // Shoot処理を停止する
-        Debug.Log("OnDisable");
-        CancelInvoke("Shoot");
-    }
+    //void OnDisable()
+    //{
+    //    // Shoot処理を停止する
+    //    Debug.Log("OnDisable");
+    //    CancelInvoke("Shoot");
+    //}
 }
