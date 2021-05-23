@@ -1218,7 +1218,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: aeb818ab889bcd24199891c3cbbc6e47, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1965,7 +1965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07416010bfe254a6a8ea5cb99f097c74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTime: 30
+  gameTime: 10
   state: {fileID: 1375617172}
 --- !u!114 &1846680035
 MonoBehaviour:
@@ -1999,7 +1999,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u6B8B\u308A\u6642\u9593\uFF1A30\u79D2"
+  m_Text: "\u6B8B\u308A\u6642\u9593\uFF1A0\u79D2"
 --- !u!222 &1846680036
 CanvasRenderer:
   m_ObjectHideFlags: 0
