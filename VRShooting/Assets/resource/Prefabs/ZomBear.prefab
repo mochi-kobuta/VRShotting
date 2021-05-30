@@ -46,7 +46,7 @@ Animator:
   m_GameObject: {fileID: 7759461490301194140}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2cd6bf77cac24414c8e134b0c0e7aed3, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -100,7 +100,8 @@ MonoBehaviour:
   spawnClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
   hitClip: {fileID: 8300000, guid: 1d4840678e677424b8921716c72397ea, type: 3}
   enemyCollider: {fileID: 6461577687205847042}
-  enemyRenderer: {fileID: 0}
+  enemyRenderer: {fileID: 7759461490295915222}
+  point: 1
 --- !u!82 &-1131868371503934232
 AudioSource:
   m_ObjectHideFlags: 0

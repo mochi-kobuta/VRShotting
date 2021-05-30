@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class CameraRotor : MonoBehaviour
 {
@@ -18,8 +19,8 @@ public class CameraRotor : MonoBehaviour
         float verticalRotation = 0.0f;
 
         // スマホでスワイプできる様にする
-        if (Application.platform == RuntimePlatform.IPhonePlayer ||
-            Application.platform == RuntimePlatform.Android)
+        if ((Application.platform == RuntimePlatform.IPhonePlayer ||
+            Application.platform == RuntimePlatform.Android) && !XRSettings.enabled))
         {
 
             if (Input.GetMouseButtonDown(0))
@@ -46,9 +47,9 @@ public class CameraRotor : MonoBehaviour
 
         // 回転量を更新
         horaizontalAngle += horaizontalRotation;
-        Debug.Log(horaizontalAngle);
+        //Debug.Log(horaizontalAngle);
         verticalAngle += verticalRotation;
-        Debug.Log(verticalAngle);
+        //Debug.Log(verticalAngle);
 
         //垂直方向は回転しすぎないように制限
         verticalAngle = Mathf.Clamp(verticalAngle, -80f, 80f);

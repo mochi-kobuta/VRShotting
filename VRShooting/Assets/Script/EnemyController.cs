@@ -10,10 +10,11 @@ public class EnemyController : MonoBehaviour
 
     // 倒された時に無効化するためにコライダーとレンダラーを持っておく
     [SerializeField] Collider enemyCollider; //コライダー
+    [SerializeField] Renderer enemyRenderer; //レンダラー
+    [SerializeField] int point = 1; // 倒したときの加算スコアポイント
+    [SerializeField] int hp = 1; // 敵のヒットポイント
 
     AudioSource audioSource; //再生に使用するAudioSource
-
-    [SerializeField] int point = 1; // 倒したときの加算スコアポイント
 
     ScoreController score;          // スコア
 
@@ -39,8 +40,15 @@ public class EnemyController : MonoBehaviour
         // 弾命中時の音を再生
         audioSource.PlayOneShot(hitClip);
 
-        // 死亡処理
-        GoDown();
+        // HP 減算
+        --hp;
+
+        // HPが０になったら死亡
+        if(hp <= 0)
+        {
+            // 死亡処理
+            GoDown();
+        }
     }
 
 

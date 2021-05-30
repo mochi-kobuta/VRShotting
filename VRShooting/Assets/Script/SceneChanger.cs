@@ -6,6 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    public void LoadScene(string sceneName)
+    {
+        // 指定されたシーンをロードする
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void QuitGame()
+    {
+        // アプリケーションを終了する
+        Application.Quit();
+    }
+
+
     public void ReloadScene()
     {
         // 現在のシーンを取得
